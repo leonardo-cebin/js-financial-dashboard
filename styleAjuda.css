@@ -1,0 +1,61 @@
+.help {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--background-item);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.help-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+/* --- --- --- Estilo das dúvidas --- --- --- */
+.questions {
+  margin-bottom: 15px;
+  border: 1px solid var(--question-border);
+  border-radius: 8px;
+  overflow: hidden; /* Esconde a parte que sai no border-radius */
+}
+
+/* --- --- --- Estilo da pergunta --- --- --- */
+.item-question {
+  background-color: var(--background-question);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: var(--text-color);
+}
+
+/* --- --- --- Hover para a pergunta --- --- --- */
+.item-question:hover {
+  background-color: var(--hover-color);
+}
+
+/* --- --- --- Estilo da resposta --- --- --- */
+.item-answer {
+  max-height: 0; /* Initially hidden */
+  overflow: hidden;
+  padding: 0 15px 0 25px; /* Increased left padding */
+  font-size: 0.9em; /* Smaller font size */
+  background-color: var(--background-color);
+  border-top: 1px solid #ddd;
+  color: var(--text-opacity);
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.item-answer.revealed {
+  max-height: 200px; /* Adjust as needed */
+  padding: 15px 15px 15px 25px; /* Keep the left padding larger */
+}
+
+/* --- --- --- Mostrar resposta ao clicar na pergunta --- --- --- */
+.question:active .item-answer {
+  display: block;
+}

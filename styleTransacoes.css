@@ -1,0 +1,183 @@
+.transaction-sec {
+    /*background-color: #f5f5f5;*/
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- --- Header e Cards --- --- */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px; 
+}
+
+/* --- --- Seção de Cards --- --- */
+.balance-cards {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.balance-card {
+    background-color: var(--background-item);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.balance-card a {
+    text-decoration: none;
+}
+
+.balance-card p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.balance-card h2 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+/* Cards circulares com ícones */
+.circle-card {
+    width: 50px;
+    height: 50px;
+    background-color: var(--background-item);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 24px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.circle-card:hover {
+    background-color: #b5b5b5;
+}
+
+/* --- --- --- Seletor de Meses --- --- --- */
+.month-select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #000;
+}
+
+/* --- --- --- Parte de Busca e Filtro --- --- --- */
+.search-and-filter {
+    display: flex;
+    align-items: center;
+}
+
+/* --- --- Busca --- --- */
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-container i {
+    position: absolute;
+    left: 10px;
+    font-size: 18px;
+    color: var(--complemental-text-color);
+}
+
+.search-input {
+    padding: 10px 10px 10px 35px; /* Tem um espaço maior na esquerda por causa do ícone */
+    border-radius: 5px;
+    border: 2px solid #000;
+    margin-right: 10px;
+}
+
+/* --- Divisor entre Busca e Filtro --- */
+.vertical-divider {
+    height: 30px;
+    width: 1px;
+    background-color: var(--text-color);
+    margin: 0 15px;
+}
+
+/* --- --- Filtro --- --- */
+.search-filter-btn {
+    background-color: #ffde55;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    color: #000;
+}
+
+.search-filter-btn i {
+    font-size: 18px;
+}
+
+.search-filter-btn:hover {
+    background-color: #c5ba55;
+}
+
+/* --- --- --- TABELA --- --- --- */
+.transaction-sec {
+    background-color: var(--background-item);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-table {
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.transaction-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.title {
+    background-color: #ffde55;
+    color: #000;
+}
+
+.content {
+    color: var(--text-color);
+}
+
+.transaction-table tbody tr:nth-child(even) {
+    background-color: var(--background-transactions);
+}

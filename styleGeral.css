@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* Definições de variáveis para modo noturno*/
+:root{
+    /* cores modo claro */
+    --background-color: #ffffff;
+    --sidebar-color: #f2f2f2;
+    --text-color: #000;
+    --complemental-text-color: #666;
+    --background-item: #f5f5f5;
+    --complemental-white: #666;
+    --background-transactions: #ddd;
+    --background-question: #f9f9f9;
+    --question-border: #ddd;
+    --text-opacity: #000;
+    --calendar-color: invert(1) brightness(0%);
+    --hover-color: #ddd;
+
+    /* cores modo escuro */
+    --darkmode-background-color: #121212;
+    --darkmode-sidebar-color: #1F1F1F;
+    --darkmode-text-color: #FFF;
+    --darkmode-complemental-text-color: #979595;
+    --darkmode-background-item: #202020;
+    --darkmode-complemental-white: #FFF;
+    --darkmode-background-transactions: #646464;
+    --darkmode-background-question: #121212;
+    --darkmode-question-border: #121212;
+    --darkmode-text-opacity: #FFFFFF70;
+    --darkmode-calendar-color: invert(1) brightness(200%);
+    --darkmode-hover-color: #0000004b;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.merriweather-black {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- --- --- Barra lateral --- --- --- */
+.sidebar {
+    width: 210px;
+    height: 100vh;
+    background-color: var(--sidebar-color);
+    display: flex;
+    flex-direction: column;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 10; 
+}
+
+/* --- --- Perfil do usuário --- --- */
+.user-profile {
+    text-align: center;
+}
+
+.user-profile a {
+    text-decoration: none;
+}
+
+
+.user-icon i {
+    font-size: 85px;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.user-image {
+    width: 90px;
+    border-radius: 50%; 
+    display: none;
+    margin: auto;
+}
+
+.user-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* --- --- Botão NOVO --- --- */
+.new-transaction-btn {
+    background-color: #ffde55;
+    color: var(--background-color);
+    border: none;
+    padding: 15px 10px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 
+                0px 6px 10px 0px rgba(0, 0, 0, 0.14), 
+                0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.new-transaction-btn:hover {
+    background-color: #c5ba55;
+}
+
+/* --- --- Menu Principal --- --- */
+.menu {
+    margin-bottom: 120px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul a {
+    text-decoration: none;
+}
+
+.menu ul li a {
+    color: var(--text-color);
+}
+
+.menu-item {
+    padding: 10px;
+    font-size: 16px;
+    color:var(--text-color);
+    cursor: pointer;
+    position: relative;
+    /* Adicionei isso para manipular o quadrado indicador */
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center; 
+    text-decoration: none; 
+    color: inherit;
+    gap: 15px;
+}
+
+.change-theme-button {
+    padding: 10px;
+    font-size: 16px;
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+}
+
+.change-theme-button a {
+    display: flex;
+    align-items: center; 
+    text-decoration: none; 
+    color: inherit;
+    gap: 15px;
+}
+
+.change-theme-button:hover {
+    background-color: var(--hover-color);
+    border-radius: 8px;
+}
+
+.menu-item:hover {
+    background-color: var(--hover-color);
+    border-radius: 8px;
+}
+
+/* Quadrado que indica a aba ativa */
+.menu-item.active::before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    width: 10px;
+    height: 37px;
+    background-color: #004aad;
+    border-radius: 4px;
+}
+
+.menu-item.active {
+    color:var(--text-color);
+    font-weight: bold;
+}
+
+/* --- --- Menu Secundário --- --- */
+.secondary-menu ul {
+    list-style: none;
+}
+
+.secondary-menu a {
+    text-decoration: none;
+}
+
+
+/* --- --- --- DASHBOARD --- --- --- */
+.dashboard {
+    flex: 1;
+    padding: 40px;
+    margin-left: 210px; 
+    overflow-y: auto; /* Adiciona scroll no dashboard se o conteúdo for maior que a tela */
+    height: 100vh; 
+    position: relative;
+}
+
+header h1 {
+    font-size: 40px;
+    color: var(--text-color);
+}
+
+header p {
+    font-size: 18px;
+    color: var(--complemental-text-color);
+    margin-top: 5px;
+}
+
+/* --- --- --- FOOTER --- --- --- */
+.footer {
+    background-color: var(--sidebar-color);
+    padding: 10px 0; 
+    text-align: center;
+    width: calc(100% - 210px); /* Mantém a largura alinhada ao dashboard */
+    margin-left: 210px; /* Alinhar com o dashboard */
+    border: none; 
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    color: var(--complemental-text-color); 
+}
+
+.footer p {
+    font-size: 14px;
+    color: var(--complemental-white);
+}
+
+
+/*NOVO CSS COM A PARTE DE ADD NOVO GASTO OU RECEITA*/
+
+/* Estilo para o menu de seleção de tipo de transação */
+.transaction-menu {
+    position: absolute;
+    background-color: var(--background-item);
+    border: 1px solid var(--background-item);
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 150px;
+    z-index: 1000;
+    display: none; /* Mantém oculto por padrão */
+    color: var(--text-color);
+}
+
+/* Opções do menu */
+.transaction-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.transaction-menu li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center; 
+    gap: 15px;
+}
+
+.transaction-menu li:hover {
+     /* cor hover */
+    background-color: var(--hover-color);
+}
+
+
+/*Estilo para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Estilo para o formulário */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--text-color);
+}
+
+.modal-content form label {
+    margin-top: 10px;
+}
+
+.modal-content form input,
+.modal-content form select,
+.modal-content form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--complemental-text-color);
+    width: 100%;
+}
+
+.modal-content form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #28a745;
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content form button:hover {
+    background-color: #218838;
+}
+
+.modal-content input, .modal-content textarea {
+    background-color: var(--background-question);
+}
+
+select {
+    background-color: var(--background-question);
+    color: var(--text-color);
+}
+
+select option {
+    color: var(--text-color);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: var(--calendar-color);
+}
+
+input[type="date"] {
+    color: var(--text-color); 
+}

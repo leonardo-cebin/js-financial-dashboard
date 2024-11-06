@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos</title>
+    <link rel="stylesheet" href = "styleGeral.css">
+    <link rel="stylesheet" href = "styleTransacoes.css">
+    <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <!-- Perfil do usuário -->
+            <div class="user-profile">
+                <div class="user-icon">
+                    <div class="user-icon">
+                        <img id="user-image" class="user-image">
+                        <i id="user-icon" class="fa-solid fa-circle-user"></i>
+                    </div>
+                </div>
+                <a href="indexPerfil.html"><p class="user-name" id="user-name">Nome</p></a>
+            </div>
+
+            <!-- Botão de adicionar nova transação --> 
+            <button id="new-transaction-btn" class="new-transaction-btn">
+                <i class="fa-solid fa-plus"></i> NOVO
+            </button>
+
+            <!-- Menu principal -->
+            <nav class="menu poppins-regular">
+                <ul>
+                    <li class="menu-item">
+                        <a href="indexDashboard.html">
+                            <i class="fa-solid fa-house"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="indexTransacoes.html">
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                            <p>Transações</p>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="indexReceitas.html">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <p>Receitas</p>
+                        </a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="indexGastos.html">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <p>Gastos</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Menu secundário (Configurações e Ajuda) -->
+            <nav class="secondary-menu poppins-regular">
+                <ul>
+                    <li class="change-theme-button" >
+                        <a id="change-theme-btn">
+                            <i class="fa-solid fa-moon"></i> Modo Noturno
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="indexAjuda.html">
+                            <i class="fa-solid fa-circle-question"></i> Ajuda
+                        </a>
+                    </li>
+                </ul>
+            </nav>  
+        </aside>
+
+        <main class="dashboard">
+            <!-- Contêiner flexível para header e cards -->
+            <div class="header-container">
+                <!-- Seção de Cards de Saldo e Links -->
+                <header>
+                    <h1 class="merriweather-black">GASTOS</h1>
+                    <p class="poppins-regular">Bem vindo(a), <span id="welcome-user-name">Fulano</span>!</p>
+                </header>
+                <section class="balance-cards">
+                    <div class="balance-card">
+                        <a href="indexTransacoes.html">
+                            <p>Total Gastos</p>
+                            <h2>R$345,00</h2>
+                        </a>
+                    </div>
+                    <a href="indexReceitas.html" class="circle-card">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </section>
+            </div>
+        
+            <!-- Seção de Transações -->
+            <div class="transaction-sec">
+                <div class="transaction-header">
+                    <select name="month" id="month" class="month-select poppins-regular">
+                        <option value="january">JANEIRO</option>
+                        <option value="february">FEVEREIRO</option>
+                        <option value="march">MARÇO</option>
+                        <option value="april">ABRIL</option>
+                        <option value="may">MAIO</option>
+                        <option value="june">JUNHO</option>
+                        <option value="july">JULHO</option>
+                        <option value="august">AGOSTO</option>
+                        <option value="september">SETEMBRO</option>
+                        <option value="october">OUTUBRO</option>
+                        <option value="november">NOVEMBRO</option>
+                        <option value="december">DEZEMBRO</option>
+                    </select>
+                
+                    <div class="search-and-filter">
+                        <div class="search-container">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" placeholder="Buscar..." class="poppins-regular search-input">
+                        </div>
+                        <div class="vertical-divider"></div>
+                        <button type="button" class="search-filter-btn">
+                            <i class="fa-solid fa-filter"></i>
+                        </button>
+                    </div>
+                </div>
+        
+                <!-- Tabela de Transações -->
+                <div class="transaction-table">
+                    <table>
+                        <thead>
+                            <tr class="title">
+                                <th>MOVIMENTAÇÕES</th>
+                                <th>VALOR GASTO</th>
+                                <th>CATEGORIA</th>
+                                <th>DATA</th>
+                                <th>DESCRIÇÃO</th>
+                            </tr>
+                        </thead>
+                        <tbody class="content">
+                            <tr>
+                                <td>Festa Universitária</td>
+                                <td>R$200,00</td>
+                                <td>Lazer</td>
+                                <td>01/09</td>
+                                <td>Ingresso para Festa</td>
+                            </tr>
+                            <tr>
+                                <td>Ifood</td>
+                                <td>R$45,00</td>
+                                <td>Alimentação</td>
+                                <td>06/09</td>
+                                <td>Compra de Pizza</td>
+                            </tr>
+                            <tr>
+                                <td>Conserto da pia</td>
+                                <td>R$100,00</td>
+                                <td>Serviços</td>
+                                <td>10/09</td>
+                                <td>Pagamento para o conserto da pia</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024. Feito por Leonardo S. Cebin. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- MODAL PARA ADICIONAR NOVA TRANSAÇÃO -->
+    <div id="transaction-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">&times;</span>
+            <h2>Nova Transação</h2>
+            <form id="transaction-form">
+                <input type="hidden" id="tipo" name="tipo"> 
+                
+                <label for="movimentacao">Movimentação:</label>
+                <input id="movimentacao" name="movimentacao" required>
+
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" name="valor" required>
+
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" name="categoria" required>
+                </select>
+
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao"></textarea>
+
+                <button type="button" onclick="adicionarTransacao()">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Menu de seleção para Gasto ou Receita -->
+    <div id="new-transaction-menu" class="transaction-menu" >
+        <ul>
+            <li onclick="selecionarTipo('receita')" class="receita">
+                <i class="fa-solid fa-arrow-up"></i>
+                <p>Receita</p>
+            </li>
+            <li onclick="selecionarTipo('gasto')" class="gasto">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <p>Gasto</p>
+            </li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+    <script defer src="darkMode.js"></script>
+
+</body>
+
+</html>

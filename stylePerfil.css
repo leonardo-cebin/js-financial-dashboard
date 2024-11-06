@@ -1,0 +1,173 @@
+.perfil-container {
+    flex: 1;
+    padding: 40px;
+    margin-left: 210px; 
+    height: 100vh;
+    position: relative;
+}
+
+header h1 {
+    font-size: 40px;
+    color: var(--text-color);
+}
+
+header p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* --- --- Conteúdo do Perfil --- --- */
+.active.user-profile {
+    border-bottom: 3px solid #004aad; /* Adiciona a borda embaixo azul quando estiver ativo */
+    padding-bottom: 5px; 
+    border-radius: 5%;
+    margin-bottom: -8px; /* Tirei um pouco da margem para não ficar difernte ao mudar de navegação */
+}
+
+.profile-content {
+    margin-top: 40px;
+}
+
+.profile-box {
+    background-color: var(--background-item);
+    padding: 20px;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- --- Seção Esquerda --- --- */
+.left-section {
+    width: 25%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.user-photo-placeholder {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 20%;
+    position: relative; 
+    margin-top: 13%;
+}
+
+.file-input-label {
+    background-color: #d3d3d3; /* Fundo cinza claro */
+    color: black; /* Texto branco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-250%);
+    font-size: 0.65vw;
+}
+
+.file-input-label:hover {
+    background-color: #b3b3b3; /* Fundo azul ao passar o mouse */
+}
+
+.profile-pic {
+    display: none; 
+    width: 100%; 
+    border-radius: 20%;
+}
+
+/* --- --- Seção Direita --- --- */
+.right-section {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.user-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Estilos das caixas de inputs */
+.user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+.user-info label {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.user-info input,
+.user-info select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--question-border);
+    font-size: 14px;
+    width: 100%;
+    background-color: var(--background-question);
+}
+
+.user-birthday {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.user-birthday label {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.birthday-picker {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #666;
+}
+
+/* --- --- Botão Editar --- --- */
+.edit-btn {
+    background-color: #004aad;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-250%);
+}
+
+.edit-btn:hover {
+    background-color: #003788;
+}
+
+select, select option {
+    color: var(--text-color);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: var(--calendar-color);
+}
+
+
+
